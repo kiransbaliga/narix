@@ -9,11 +9,12 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 import icon from "astro-icon";
 import expressiveCode from "astro-expressive-code";
 import { expressiveCodeOptions } from "./src/site.config";
+import lottie from "astro-integration-lottie";
 
 // https://astro.build/config
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://astro-cactus.chriswilliams.dev/",
+	site: "https://blog.kiransbaliga.engineer/",
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		rehypePlugins: [
@@ -32,6 +33,7 @@ export default defineConfig({
 		},
 	},
 	integrations: [
+		lottie(),
 		expressiveCode(expressiveCodeOptions),
 		icon(),
 		tailwind({
