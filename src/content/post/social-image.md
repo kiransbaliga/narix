@@ -1,22 +1,28 @@
 ---
 title: "Example OG Social Image"
-publishDate: "27 January 2023"
-description: "An example post for Astro Cactus, detailing how to add a custom social image card in the frontmatter"
-tags: ["example", "blog", "image"]
+publishDate: "07 March 2024"
+description: "Ever felt that feeling sometimes that everything in your life seems fine but"
+tags: ["rant", "thoughts", "imposter"]
 # ogImage: "/social-card.png"
+draft: true
 ---
 
-## Adding your own social image to a post
+## Hi there 👋
 
-This post is an example of how to add a custom [open graph](https://ogp.me/) social image, also known as an OG image, to a blog post.
-By adding the optional ogImage property to the frontmatter of a post, you opt out of [satori](https://github.com/vercel/satori) automatically generating an image for this page.
+Ever felt that feeling sometimes, eventhough everything in your life seems fine and you are doing great but you still feel a little off?
+You just feel okay and life seems not as exciting as before. Time seems to be moving so fast. On paper you are doing great but you still feel a little glump everytime.
 
-If you open this markdown file `src/content/post/social-image.md` you'll see the ogImage property set to an image which lives in the public folder[^1].
+let me explain
 
-```yaml
-ogImage: "/social-card.png"
-```
+### Where it begins
+I recently started working as a software developer at a cool [company](https://keyvalue.systems) after graduating B.Tech in 2023. 
+Saying about my company, its a totally cool place. You have all the freedoms and have a family like work culture. You know almost every one of the 400+ employees in here. You get to learn a lot as well as get great exposure.
 
-You can view the one set for this template page [here](https://astro-cactus.chriswilliams.dev/social-card.png).
+### Work life
+Even though our office hours are quite flexible, I work from morning 9:30 AM to 6:30 PM. I do sometime come in early and stay late. I have never felt work pressure or anything. I take generous breaks in between so I rarely feel exhausted.  
 
-[^1]: The image itself can be located anywhere you like.
+### Social life
+I live with 4 of my close [friends](https://instagram.com/devsoncoffee) from my college. I go to gym for 2 hrs in the morning or evening whenever I get the time. I play badminton with the my collegues in the night as well. I try to go out as much as I can. 
+
+But here is the problem. As you can see, after setting aside time for gym and playing badminton, I only couple of hours left with me to do personal stuffs including cooking my own food. The first few months were exciting. New place, new lifestyle, you are earning, you buy stuffs. but lately all the stuffs started to feel a little grey. the routine make the life boring. I am not complaining, I have everything I could ask for, but sometimes I can't help but feel even though you are surrounded by a lot of people I still feel alone. I don't find many stuffs interesting. I started turning down many plans.
+
