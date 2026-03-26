@@ -1,71 +1,52 @@
 ---
-import ThemeToggle from "../ThemeToggle.astro";
-import Search from "../Search.astro";
-import { menuLinks } from "@/site-config";
-
-const url = new URL(Astro.request.url);
+import Search from "@/components/Search.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import { menuLinks } from "@/site.config";
+import { siteConfig } from "../../site.config";
 ---
 
-<header id="main-header" class="group relative mb-28 flex items-center sm:ps-[4.5rem]">
+<header class="group relative mb-28 flex items-center sm:ps-18" id="main-header">
 	<div class="flex sm:flex-col">
 		<a
+			aria-current={Astro.url.pathname === "/" ? "page" : false}
+			class="inline-flex items-center sm:relative sm:inline-block sm:grayscale sm:hover:filter-none"
 			href="/"
-			class="inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block"
-			aria-current={url.pathname === "/" ? "page" : false}
 		>
 			<svg
-				version="1.1"
-				id="Layer_1"
+				aria-hidden="true"
+				class="me-3 h-10 w-6 sm:absolute sm:-start-18 sm:me-0 sm:h-20 sm:w-12"
+				fill="none"
+				focusable="false"
+				viewBox="0 0 512 512"
 				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				viewBox="-51.2 -51.2 614.40 614.40"
-				xml:space="preserve"
-				width="130px"
-				height="130px"
-				fill="#000000"
-				transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"
-				><g id="SVGRepo_bgCarrier" stroke-width="0"
-					><path
-						transform="translate(-51.2, -51.2), scale(19.2)"
-						d="M16,26.54286994922318C19.706756275892175,26.858945741234027,24.044724726565395,27.17377276463833,26.359816702419337,24.26167813387888C28.67304359997833,21.351929537119517,27.564024992786276,17.1361203998079,26.239466405707002,13.662908611660214C25.1583399227862,10.828016080980147,22.592383466379136,9.259690838992485,20.023140087118293,7.645863527690974C16.778916920209106,5.60805893783488,13.505798650899415,2.0126855757804583,9.945793145579415,3.4283099275207505C6.307806900126474,4.874943061279485,5.674014393424484,9.649615685535224,5.208412687137189,13.536890617527527C4.8143889225279795,16.826566497343805,5.525992387302059,20.115813130859298,7.641633117035603,22.66557516368007C9.704980287348228,25.152313200744576,12.780388668372428,26.268333096549657,16,26.54286994922318"
-						fill="#49837c"
-						stroke-width="0"></path></g
-				><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g
-					id="SVGRepo_iconCarrier"
-				>
-					<rect x="21.664" y="68.64" style="fill:#2bbc8a;" width="468.64" height="286"></rect>
-					<path
-						d="M480,77.632V346.96H32V77.632H480 M488,45.632H24c-13.2,0-24,10.8-24,24V354.96c0,13.2,10.8,24,24,24h464 c13.2,0,24-10.8,24-24V69.632C512,56.432,501.2,45.632,488,45.632L488,45.632z"
-					></path>
-					<rect x="216" y="378.976" style="fill:#494949;" width="80" height="71.328"></rect>
-					<rect x="142.992" y="434.368" width="225.92" height="32"></rect>
-					<polygon points="216,378.976 282.752,378.976 216,408.72 "></polygon>
-					<g style="opacity:0.35;">
-						<polygon style="fill:#FFFFFF;" points="32,77.632 168,77.632 32,160.64 "></polygon>
-					</g>
-					<g>
-						<rect x="170" y="118.256" style="fill:#FFFFFF;" width="128" height="16"></rect>
-						<rect x="214" y="156.256" style="fill:#FFFFFF;" width="128" height="16"></rect>
-						<rect x="170" y="204.256" style="fill:#FFFFFF;" width="128" height="16"></rect>
-						<rect x="214" y="242.208" style="fill:#FFFFFF;" width="128" height="16"></rect>
-						<rect x="170" y="290.208" style="fill:#FFFFFF;" width="128" height="16"></rect>
-					</g>
-				</g></svg
 			>
-			<span class="text-xl font-bold sm:text-2xl">All Things Narix</span>
+				<g>
+					<g>
+						<rect style="fill:#E2E5E7;" width="338" height="512" rx="32" ry="32"></rect>
+						<rect x="298" style="fill:#B0B7BD;" width="40" height="40"></rect>
+						<path style="fill:#CAD1D8;" d="M338 0L298 40L338 40z"></path>
+						<rect y="354" style="fill:#D35230;" width="338" height="108" rx="8" ry="8"></rect>
+						<g style="fill:#FFFFFF;">
+							<rect x="170" y="376.256" width="128" height="16"></rect>
+							<rect x="214" y="394.208" width="128" height="16"></rect>
+							<rect x="170" y="422.208" width="128" height="16"></rect>
+						</g>
+					</g>
+				</g>
+			</svg>
+			<span class="text-xl font-bold sm:text-2xl">{siteConfig.title}</span>
 		</a>
 		<nav
-			id="navigation-menu"
-			class="absolute -inset-x-4 top-14 hidden flex-col items-end gap-y-4 rounded-md bg-bgColor/[.85] py-4 text-accent shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:items-center sm:divide-x sm:divide-dashed sm:divide-accent sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none"
 			aria-label="Main menu"
+			class="bg-global-bg absolute -inset-x-4 top-12 hidden flex-col divide-y px-2 py-4 group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:divide-x sm:divide-y-0 sm:bg-transparent sm:p-0"
+			id="navigation-menu"
 		>
 			{
 				menuLinks.map((link) => (
 					<a
+						aria-current={Astro.url.pathname === link.path ? "page" : false}
+						class="text-accent px-2 py-4 font-semibold sm:px-4 sm:py-0 sm:underline-offset-2 sm:hover:underline"
 						href={link.path}
-						class="px-4 py-4 sm:py-0 sm:hover:underline"
-						aria-current={url.pathname === link.path ? "page" : false}
-						data-astro-prefetch
 					>
 						{link.title}
 					</a>
@@ -77,67 +58,61 @@ const url = new URL(Astro.request.url);
 	<ThemeToggle />
 	<mobile-button>
 		<button
-			id="toggle-navigation-menu"
-			class="group relative ms-4 h-7 w-7 sm:invisible sm:hidden"
-			type="button"
-			aria-label="Open main menu"
 			aria-expanded="false"
 			aria-haspopup="menu"
+			class="group relative ms-4 h-7 w-7 sm:invisible sm:hidden"
+			id="toggle-navigation-menu"
+			type="button"
 		>
+			<span class="sr-only">Open main menu</span>
 			<svg
-				id="line-svg"
-				class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
 				aria-hidden="true"
-				focusable="false"
-				xmlns="http://www.w3.org/2000/svg"
+				class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
 				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width="1.5"
+				focusable="false"
+				id="line-svg"
 				stroke="currentColor"
+				stroke-width="1.5"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"
+				<path d="M3.75 9h16.5m-16.5 6.75h16.5" stroke-linecap="round" stroke-linejoin="round"
 				></path>
 			</svg>
 			<svg
-				id="cross-svg"
-				class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 text-accent opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
-				class="text-accent"
 				aria-hidden="true"
-				focusable="false"
-				xmlns="http://www.w3.org/2000/svg"
+				class="text-accent absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
+				class="text-accent"
 				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width="1.5"
+				focusable="false"
+				id="cross-svg"
 				stroke="currentColor"
+				stroke-width="1.5"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+				<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
 			</svg>
 		</button>
 	</mobile-button>
 </header>
 
 <script>
-	import { toggleClass } from "@/utils";
+	import { toggleClass } from "@/utils/domElement";
 
 	class MobileNavBtn extends HTMLElement {
-		private headerEl: HTMLElement;
-		private mobileButtonEl: HTMLButtonElement;
-		private menuOpen: boolean;
+		#menuOpen: boolean = false;
 
-		constructor() {
-			super();
-			this.headerEl = document.getElementById("main-header")!;
-			this.mobileButtonEl = this.querySelector("button") as HTMLButtonElement;
-			this.menuOpen = false;
+		connectedCallback() {
+			const headerEl = document.getElementById("main-header")!;
+			const mobileButtonEl = this.querySelector<HTMLButtonElement>("button");
 
-			this.mobileButtonEl.addEventListener("click", this.toggleMobileMenu);
+			mobileButtonEl?.addEventListener("click", () => {
+				if (headerEl) toggleClass(headerEl, "menu-open");
+				this.#menuOpen = !this.#menuOpen;
+				mobileButtonEl.setAttribute("aria-expanded", this.#menuOpen.toString());
+			});
 		}
-
-		toggleMobileMenu = () => {
-			toggleClass(this.headerEl, "menu-open");
-			this.menuOpen = !this.menuOpen;
-			this.mobileButtonEl.setAttribute("aria-expanded", this.menuOpen.toString());
-		};
 	}
 
 	customElements.define("mobile-button", MobileNavBtn);
