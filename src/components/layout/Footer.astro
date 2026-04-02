@@ -1,5 +1,6 @@
 ---
 import { menuLinks, siteConfig } from "@/site.config";
+import { Icon } from "astro-icon/components";
 
 const year = new Date().getFullYear();
 ---
@@ -11,7 +12,7 @@ const year = new Date().getFullYear();
 		&copy; {siteConfig.author}
 		{year}.
 	</div>
-	<nav aria-labelledby="footer_links" class="sm:divide-muted flex gap-x-2 sm:gap-x-0 sm:divide-x">
+	<nav aria-labelledby="footer_links" class="sm:divide-muted flex items-center gap-x-2 sm:gap-x-0 sm:divide-x">
 		<p id="footer_links" class="sr-only">More on this site</p>
 		{
 			menuLinks.map((link) => (
@@ -20,5 +21,9 @@ const year = new Date().getFullYear();
 				</a>
 			))
 		}
+		<a class="hover:text-global-text px-4 py-2 sm:py-0" href="/rss.xml" target="_blank">
+			<span class="sr-only">RSS feed</span>
+			<Icon aria-hidden="true" class="h-5 w-5" focusable="false" name="mdi:rss" />
+		</a>
 	</nav>
 </footer>
