@@ -142,7 +142,7 @@ Also failed.
 
 Today I was out with [melvin](https://www.linkedin.com/in/melvinthomasdev) and he showed me this app:
 
-[https://apps.apple.com/us/app/syncspend/id6759112033](https://apps.apple.com/us/app/syncspend/id6759112033)
+[syncspend](https://apps.apple.com/us/app/syncspend/id6759112033)
 
 It syncs expenses to Notion. You log using iOS shortcuts.
 
@@ -273,5 +273,4 @@ If you have ideas, send them.
 You can check it out here:
 👉 [⁠Poor Decisions™](https://baliga.dev/poor-decisions)
 
-[it aint much, but its honest work]
-![https://tenor.com/view/it-aint-much-but-its-honest-work-farmer-gif-14006465](https://media1.tenor.com/m/gsh9RrFHrKgAAAAC/it-ain%27t-much.gif)
+![it aint much, but its honest work](https://media1.tenor.com/m/gsh9RrFHrKgAAAAC/it-ain%27t-much.gif)
