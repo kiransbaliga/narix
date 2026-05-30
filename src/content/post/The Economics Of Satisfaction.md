@@ -1,6 +1,6 @@
 ---
 title: "The Economics Of Satisfaction"
-description: "This post is for testing the draft post functionality"
+description: "Why sometimes, the cheaper option is more satisfying"
 publishDate: "28 May 2026"
 tags: ["rant", "life"]
 ---
