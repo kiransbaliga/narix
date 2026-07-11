@@ -5,8 +5,6 @@ publishDate: "11 Jul 2026"
 tags: ["experiments", "hobby"]
 ---
 
-# I accidentally doubled my reading speed by building a tiny website.
-
 So there I was, scrolling through reels, when I came across one claiming that humans can read at **400-800 words per minute**.
 
 Naturally I was curious.
