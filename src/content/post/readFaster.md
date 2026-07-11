@@ -1,7 +1,7 @@
 ---
 title: "Can humans really read 800 words per minute?"
 description: "I built a small website that uses RSVP (Rapid Serial Visual Presentation) to test reading speeds."
-publishDate: "11 July 2026"
+publishDate: "11 Jul 2026"
 tags: ["experiments", "hobby"]
 ---
 
