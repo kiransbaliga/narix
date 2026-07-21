@@ -16,7 +16,7 @@ And honestly, I can afford it now. That’s not the issue.
 The funny part happened after we left.
 We both realized we were still hungry.
 
-Not disappointed with the taste. Just... unsatisfied. So we ended up going to Seetadevi and ordered avil milk and chocolate shake. Loud place, people everywhere, zero aesthetics, mixer sounds louder than conversations. One avil milk cost ₹70.
+Not disappointed with the taste. Just... unsatisfied. So we ended up going to [Seetadevi](https://share.google/HWuntqHaIYgQ9MIAC) and ordered avil milk and chocolate shake. Loud place, people everywhere, zero aesthetics, mixer sounds louder than conversations. One avil milk cost ₹70.
 
 And somehow, that felt complete.
 
