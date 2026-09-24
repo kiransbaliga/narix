@@ -11,48 +11,64 @@
 @property --color-global-bg {
 	syntax: "<color>";
 	inherits: true;
-	initial-value: oklch(98.48% 0 0);
+	initial-value: #f6f6f3;
 }
 @property --color-global-text {
 	syntax: "<color>";
 	inherits: true;
-	initial-value: oklch(26.99% 0.0096 235.05);
+	initial-value: #151514;
 }
 @property --color-muted {
 	syntax: "<color>";
 	inherits: true;
-	initial-value: oklch(44.6% 0.03 256.802);
+	initial-value: #55544f;
 }
 @property --color-link {
 	syntax: "<color>";
 	inherits: true;
-	initial-value: oklch(55.44% 0.1133 349);
+	initial-value: #d64c1b;
 }
 @property --color-accent {
 	syntax: "<color>";
 	inherits: true;
-	initial-value: oklch(55.27% 0.195 19.06);
+	initial-value: #d64c1b;
 }
 @property --color-accent-2 {
 	syntax: "<color>";
 	inherits: true;
-	initial-value: oklch(18.15% 0 0);
+	initial-value: #151514;
 }
 @property --color-quote {
 	syntax: "<color>";
 	inherits: true;
-	initial-value: oklch(55.27% 0.195 19.06);
+	initial-value: #d64c1b;
+}
+@property --color-line {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: rgba(21, 21, 20, 0.15);
+}
+@property --color-card {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #ffffff;
 }
 
-/* you could refactor below to use light-dark(), depending on your target audience */
 @theme {
-	--color-global-bg: oklch(98.48% 0 0);
-	--color-global-text: oklch(26.99% 0.0096 235.05);
-	--color-muted: oklch(44.6% 0.03 256.802);
-	--color-link: oklch(55.44% 0.1133 349);
-	--color-accent: oklch(55.27% 0.195 19.06);
-	--color-accent-2: oklch(18.15% 0 0);
-	--color-quote: oklch(55.27% 0.195 19.06);
+	--font-sans: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	--font-mono: "DM Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+	--font-display: "Barlow Condensed", sans-serif;
+	--font-code: "JetBrains Mono", ui-monospace, monospace;
+
+	--color-global-bg: #f6f6f3;
+	--color-global-text: #151514;
+	--color-muted: #55544f;
+	--color-link: #d64c1b;
+	--color-accent: #d64c1b;
+	--color-accent-2: #151514;
+	--color-quote: #d64c1b;
+	--color-line: rgba(21, 21, 20, 0.15);
+	--color-card: #ffffff;
 }
 
 @layer base {
@@ -63,17 +79,28 @@
 
 		&[data-theme="light"] {
 			color-scheme: light;
+			--color-global-bg: #f6f6f3;
+			--color-global-text: #151514;
+			--color-muted: #55544f;
+			--color-link: #d64c1b;
+			--color-accent: #d64c1b;
+			--color-accent-2: #151514;
+			--color-quote: #d64c1b;
+			--color-line: rgba(21, 21, 20, 0.15);
+			--color-card: #ffffff;
 		}
 
 		&[data-theme="dark"] {
 			color-scheme: dark;
-			--color-global-bg: oklch(23.64% 0.0045 248);
-			--color-global-text: oklch(83.54% 0 264);
-			--color-muted: oklch(70.7% 0.022 261.325);
-			--color-link: oklch(70.44% 0.0431 185.69);
-			--color-accent: oklch(70.91% 0.1415 163.7);
-			--color-accent-2: oklch(94.66% 0 0);
-			--color-quote: oklch(94.8% 0.106 136.49);
+			--color-global-bg: #151514;
+			--color-global-text: #f5f4f1;
+			--color-muted: #999894;
+			--color-link: #ff6534;
+			--color-accent: #ff6534;
+			--color-accent-2: #ffffff;
+			--color-quote: #ff6534;
+			--color-line: rgba(245, 244, 241, 0.15);
+			--color-card: #1c1c1a;
 		}
 
 		--color-mode-transition-duration: 300ms;
@@ -86,7 +113,19 @@
 			--color-link var(--color-mode-transition-duration) var(--color-mode-transition-easing),
 			--color-accent var(--color-mode-transition-duration) var(--color-mode-transition-easing),
 			--color-accent-2 var(--color-mode-transition-duration) var(--color-mode-transition-easing),
-			--color-quote var(--color-mode-transition-duration) var(--color-mode-transition-easing);
+			--color-quote var(--color-mode-transition-duration) var(--color-mode-transition-easing),
+			--color-line var(--color-mode-transition-duration) var(--color-mode-transition-easing),
+			--color-card var(--color-mode-transition-duration) var(--color-mode-transition-easing);
+	}
+
+	body::before {
+		content: "";
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		pointer-events: none;
+		opacity: 0.035;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 	}
 
 	:target {
@@ -97,7 +136,7 @@
 		navigation: auto;
 	}
 
-	/* Astro image responsive styles, modified from -> https://docs.astro.build/en/guides/images/#responsive-image-styles */
+	/* Astro image responsive styles */
 	:where([data-astro-image]) {
 		object-fit: var(--fit);
 		object-position: var(--pos);
@@ -115,22 +154,37 @@
 	@import "./components/github-card.css";
 
 	.cactus-link {
-		@apply hover:decoration-link underline underline-offset-2 hover:decoration-2;
+		@apply hover:text-accent decoration-accent/40 hover:decoration-accent underline underline-offset-4 hover:decoration-2 transition-colors duration-200;
 	}
 
 	.title {
-		@apply text-accent-2 text-2xl font-semibold;
+		@apply text-accent-2 text-2xl font-semibold tracking-tight;
+	}
+
+	.display-heading {
+		font-family: var(--font-display);
+		@apply uppercase font-bold tracking-tight text-accent-2;
+	}
+
+	.eyebrow {
+		font-family: var(--font-mono);
+		@apply text-[11px] font-medium tracking-[0.08em] uppercase text-muted;
+	}
+
+	.pill {
+		font-family: var(--font-mono);
+		@apply inline-flex items-center gap-1 rounded-full border border-line px-2.5 py-0.5 text-xs uppercase tracking-wider text-muted transition-all duration-200 hover:border-accent-2 hover:text-accent-2;
 	}
 }
 
 @utility prose {
 	--tw-prose-body: var(--color-global-text);
 	--tw-prose-bold: var(--color-global-text);
-	--tw-prose-bullets: var(--color-global-text);
+	--tw-prose-bullets: var(--color-muted);
 	--tw-prose-code: var(--color-global-text);
 	--tw-prose-headings: var(--color-accent-2);
-	--tw-prose-hr: 0.5px dashed #666;
-	--tw-prose-links: var(--color-global-text);
+	--tw-prose-hr: var(--color-line);
+	--tw-prose-links: var(--color-link);
 	--tw-prose-quotes: var(--color-quote);
-	--tw-prose-th-borders: #666;
+	--tw-prose-th-borders: var(--color-line);
 }

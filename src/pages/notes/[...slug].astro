@@ -26,5 +26,10 @@ const meta = {
 ---
 
 <PageLayout meta={meta}>
+	<nav class="mb-8 font-mono text-xs uppercase tracking-wider text-muted">
+		<a href="/notes/" class="hover:text-accent-2 transition-colors inline-flex items-center gap-1.5">
+			&larr; All notes
+		</a>
+	</nav>
 	<Note as="h1" note={note} />
 </PageLayout>

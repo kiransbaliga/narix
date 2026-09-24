@@ -17,11 +17,17 @@ export default {
 							},
 						},
 						blockquote: {
-							borderLeftWidth: "0",
+							borderLeftWidth: "2px",
+							borderLeftColor: "var(--color-accent)",
+							fontStyle: "italic",
+							paddingLeft: "1rem",
 						},
 						code: {
-							border: "1px dotted #666",
-							borderRadius: "2px",
+							border: "1px solid var(--color-line)",
+							borderRadius: "4px",
+							padding: "0.15rem 0.35rem",
+							fontFamily: "var(--font-code)",
+							fontSize: "0.875em",
 						},
 						kbd: {
 							"&:where([data-theme='dark'], [data-theme='dark'] *)": {
@@ -29,7 +35,9 @@ export default {
 							},
 						},
 						hr: {
-							borderTopStyle: "dashed",
+							borderTopStyle: "solid",
+							borderTopColor: "var(--color-line)",
+							borderTopWidth: "1px",
 						},
 						strong: {
 							fontWeight: "700",

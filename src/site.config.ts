@@ -31,23 +31,32 @@ export const siteConfig: SiteConfig = {
 };
 
 // Used to generate links in both the Header & Footer.
-export const menuLinks: { path: string; title: string }[] = [
+export const menuLinks: { path: string; title: string; external?: boolean }[] = [
 	{
 		path: "/",
 		title: "Home",
 	},
 	{
 		path: "/posts/",
-		title: "Blog",
-	}
+		title: "Posts",
+	},
+	{
+		path: "/tags/",
+		title: "Tags",
+	},
+	{
+		path: "https://baliga.dev",
+		title: "Portfolio ↗",
+		external: true,
+	},
 ];
 
 // https://expressive-code.com/reference/configuration/
 export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 	styleOverrides: {
-		borderRadius: "4px",
+		borderRadius: "6px",
 		codeFontFamily:
-			'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+			"'JetBrains Mono', 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace",
 		codeFontSize: "0.875rem",
 		codeLineHeight: "1.7142857rem",
 		codePaddingInline: "1rem",

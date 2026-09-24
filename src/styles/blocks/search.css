@@ -7,13 +7,14 @@
 #cactus__search {
 	--pagefind-ui-primary: var(--color-accent);
 	--pagefind-ui-text: var(--color-global-text);
-	--pagefind-ui-background: var(--color-zinc-100);
-	--pagefind-ui-border: var(--color-zinc-300);
+	--pagefind-ui-background: var(--color-global-bg);
+	--pagefind-ui-border: var(--color-line);
 	--pagefind-ui-border-width: 1px;
+	--pagefind-ui-border-radius: 8px;
 
 	[data-theme="dark"] & {
-		--pagefind-ui-background: var(--color-zinc-800);
-		--pagefind-ui-border: var(--color-zinc-500);
+		--pagefind-ui-background: var(--color-card);
+		--pagefind-ui-border: var(--color-line);
 	}
 }
 
