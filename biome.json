@@ -32,9 +32,11 @@
 		"rules": {
 			"recommended": true,
 			"a11y": {
-				"noSvgWithoutTitle": "off"
+				"noSvgWithoutTitle": "off",
+				"noAmbiguousAnchorText": "off"
 			},
 			"style": {
+				"useTemplate": "off",
 				"noParameterAssign": "error",
 				"useAsConstAssertion": "error",
 				"useDefaultParameterLast": "error",
